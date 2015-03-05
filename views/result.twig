@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>List of your CDs</title>
+    </head>
+    <body>
+        <h1>List of your CD</h1>
+        <ul>
+            {% for cd in cds %}
+                <li>Title: {{car.getTitle}}</li>
+                <li>Artist: ${{car.getArtist}}</li>
+                <li>Price: {{car.getPrice}}</li>
+                <img src="{{car.getCoverArt}}">
+            {% endfor %}
+        </ul>
+        <a href="/">Add another car</a>
+        <a href="/delete">Delete all posts</a>
+    </body>
+</html>
