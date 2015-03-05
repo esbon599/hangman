@@ -9,8 +9,8 @@
         <ul>
             {% for cd in cds %}
                 <li>Title: {{car.getTitle}}</li>
-                <li>Artist: ${{car.getArtist}}</li>
-                <li>Price: {{car.getPrice}}</li>
+                <li>Artist: {{car.getArtist}}</li>
+                <li>Price: ${{car.getPrice}}</li>
                 <img src="{{car.getCoverArt}}">
             {% endfor %}
         </ul>

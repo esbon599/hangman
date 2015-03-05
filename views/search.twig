@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>List of your CDs</title>
+    </head>
+    <body>
+        <h1>Search result by artist</h1>
+        <ul>
+            {% if searched_cds is not empty %}
+                {% for cd in searched_cds %}
+                    <li>Title: {{cd.getTitle}}</li>
+                    <li>Artist: {{cd.getArtist}}</li>
+                    <li>Price: ${{cd.getPrice}}</li>
+                    <img src="{{cd.getCoverArt}}">
+                    <br>
+                    <br>
+                {% endfor %}
+            {% else %}
+
+                <h3>No results were found.</h3>
+
+            {% endif %}
+
+        </ul>
+        <a href="/">Return to Home</a>
+    </body>
+</html>

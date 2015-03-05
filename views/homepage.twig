@@ -5,30 +5,43 @@
         <title>Post a car</title>
     </head>
     <body>
-        {% if cds is empty %}
-        <h1>Welcome to CD database</h1>
-        {% endif %}
 
-        <br>
+        <div class="container">
 
-        {% if cds is not empty %}
-        <h3>List of your CD collection</h3>
+            {% if cds is empty %}
+            <h1>Welcome to CD database</h1>
+            {% endif %}
 
-        <ul>
-            {% for cd in cds %}
-                <li>Title: {{cd.getTitle}}</li>
-                <li>Artist: {{cd.getArtist}}</li>
-                <li>Price: ${{cd.getPrice}}</li>
-                <img src="{{cd.getCoverArt}}">
-            {% endfor %}
-        </ul>
+            {% if cds is not empty %}
+            <h3>List of your CD collection</h3>
 
-        {% endif %}
+            <form action="/search" method="post">
+                <div class="form-group">
+                    <label for="search">Search for Cds</label>
+                    <input type="text" name="search" id="search" class="form-control">
+                </div>
+
+                <button type="submit">Search</button>
+
+            </form>
+
+            <ul>
+                {% for cd in cds %}
+                    <br>
+                    <br>
+                    <li>Title: {{cd.getTitle}}</li>
+                    <li>Artist: {{cd.getArtist}}</li>
+                    <li>Price: ${{cd.getPrice}}</li>
+                    <img src="{{cd.getCoverArt}}">
+                {% endfor %}
+            </ul>
+
+            {% endif %}
 
 
-        <br>
-        <a href="/cd_form">Add new CD</a>
-
-
+            <br>
+            <p><a href="/cd_form">Add new CD</a></p>
+            <p><a href="/delete">Delete all your CDs</a><p>
+        </div>
     </body>
 </html>
