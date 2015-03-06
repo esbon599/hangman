@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hangman</title>
+    </head>
+    <body>
+
+        {% if answer is not empty %}
+
+            {% for letter in answer %}
+            <p>
+                {{ letter }}
+            </p>
+
+            {% endfor %}
+        {% endif %}
+
+
+        <h1>Enter your Guess!</h1>
+
+        <form action="/" method="post">
+            <label for="guess">Guess:</label>
+            <input type="text" name="guess" id="guess">
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </body>
+</html>
